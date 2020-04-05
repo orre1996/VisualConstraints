@@ -21,9 +21,8 @@ class ViewController: UIViewController {
     var secondConstraints = [NSLayoutConstraint]()
     var thirdConstraints = [NSLayoutConstraint]()
     var fourthConstraints = [NSLayoutConstraint]()
-    var fifthConstraints = [NSLayoutConstraint]()
     
-    lazy var allConstraints = [firstConstraints, secondConstraints, thirdConstraints, fourthConstraints, fifthConstraints]
+    lazy var allConstraints = [firstConstraints, secondConstraints, thirdConstraints, fourthConstraints]
     
     let screenHeight = UIScreen.main.bounds.height
     let screenWidth = UIScreen.main.bounds.width
@@ -104,6 +103,7 @@ class ViewController: UIViewController {
         let redBlueConstraint1 = NSLayoutConstraint.constraints(withVisualFormat: "H:|-30-[redView(60)]->=0-[blueView(40)]-30-|", metrics: nil, views: views)
         let greenRedConstraint1 = NSLayoutConstraint.constraints(withVisualFormat: "V:|-50-[redView(40)]->=0-[greenView(60)]-50-|", metrics: nil, views: views)
         let greenYellowConstraint1 = NSLayoutConstraint.constraints(withVisualFormat: "H:|-30-[greenView(40)]->=0-[yellowView(60)]-30-|", metrics: nil, views: views)
+        
         fourthConstraints.append(contentsOf: yellowBlueConstraint1)
         fourthConstraints.append(contentsOf: redBlueConstraint1)
         fourthConstraints.append(contentsOf: greenRedConstraint1)
