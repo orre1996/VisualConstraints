@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  VisualNotationApp
-//
-//  Created by Oscar Berggren on 2020-04-04.
-//  Copyright © 2020 Oscar Berggren. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
