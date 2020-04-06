@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     var secondConstraints = [NSLayoutConstraint]()
     var thirdConstraints = [NSLayoutConstraint]()
     var fourthConstraints = [NSLayoutConstraint]()
+    lazy var currentConstraint = firstConstraints
     
     lazy var allConstraints = [firstConstraints, secondConstraints, thirdConstraints, fourthConstraints]
     
@@ -100,7 +101,7 @@ class ViewController: UIViewController {
     }
     
     private func activateNextConstraint() {
-        allConstraints.forEach({ constraintsArray in NSLayoutConstraint.deactivate(constraintsArray) })
+        NSLayoutConstraint.deactivate(currentConstraint)
         
         constraintIndex += 1
         if let _ = allConstraints[safely: constraintIndex] {
@@ -108,7 +109,8 @@ class ViewController: UIViewController {
             constraintIndex = 0
         }
         
-        NSLayoutConstraint.activate(allConstraints[constraintIndex])
+        currentConstraint = allConstraints[constraintIndex]
+        NSLayoutConstraint.activate(currentConstraint)
         nextAnimation()
     }
     
