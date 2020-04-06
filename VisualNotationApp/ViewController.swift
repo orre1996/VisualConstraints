@@ -9,6 +9,7 @@ class ViewController: UIViewController {
     
     lazy var views: [String: UIView] = ["blueView": blueView, "redView": redView, "greenView": greenView, "yellowView": yellowView]
     
+    var currentConstraint = [NSLayoutConstraint]()
     var firstConstraints = [NSLayoutConstraint]()
     var secondConstraints = [NSLayoutConstraint]()
     var thirdConstraints = [NSLayoutConstraint]()
@@ -47,10 +48,7 @@ class ViewController: UIViewController {
     
     private func setupViews() {
         view.backgroundColor = .black
-        view.addSubview(blueView)
-        view.addSubview(redView)
-        view.addSubview(greenView)
-        view.addSubview(yellowView)
+        [blueView, redView, greenView, yellowView].forEach({view.addSubview($0)})
     }
     
     private func createAllViews() {
