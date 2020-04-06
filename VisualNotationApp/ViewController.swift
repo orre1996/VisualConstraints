@@ -9,7 +9,6 @@ class ViewController: UIViewController {
     
     lazy var views: [String: UIView] = ["blueView": blueView, "redView": redView, "greenView": greenView, "yellowView": yellowView]
     
-    var currentConstraint = [NSLayoutConstraint]()
     var firstConstraints = [NSLayoutConstraint]()
     var secondConstraints = [NSLayoutConstraint]()
     var thirdConstraints = [NSLayoutConstraint]()
